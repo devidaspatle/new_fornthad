@@ -4,12 +4,13 @@ import Footer from '../components/Footer';
 import { Fragment } from 'react';
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
-import { apiBaseUrl } from '../components/Configs.js';
-import Swal from 'sweetalert2';
+//import { apiBaseUrl } from '../components/Configs.js';
+//import Swal from 'sweetalert2';
 import axios from 'axios';
 
 function Showstudent() {
-    const [id, setId] = useState(useParams().id)
+    const [id] = useState(useParams().id);
+    const apiBaseUrl = process.env.REACT_APP_BASE_URL;
     const [student, setStudent] = useState({fullname:'', mobile:'',
             emailid:'',state:'',city:'',address:'',location_map:''})
       

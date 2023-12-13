@@ -3,14 +3,15 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Fragment } from 'react';
 import { Link } from "react-router-dom";
-import { apiBaseUrl } from '../components/Configs.js';
+//import { apiBaseUrl } from '../components/Configs.js';
 import Swal from 'sweetalert2';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 function Shop() {
-      const  [shopList, setShopList] = useState([])
-  
+    const  [shopList, setShopList] = useState([]);
+    const apiBaseUrl = process.env.REACT_APP_BASE_URL;
+    
     useEffect(() => {
         fetchShopList()
     }, [])

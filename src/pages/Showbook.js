@@ -3,13 +3,14 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Fragment } from 'react';
 import React, {useState , useEffect} from 'react';
-import { apiBaseUrl } from '../components/Configs.js';
+//import { apiBaseUrl } from '../components/Configs.js';
 import { useParams } from "react-router-dom";
-import Swal from 'sweetalert2';
+//import Swal from 'sweetalert2';
 import axios from 'axios';
 
 function Showbook() {
-    const [id, setId] = useState(useParams().id)
+    const [id] = useState(useParams().id);
+    const apiBaseUrl = process.env.REACT_APP_BASE_URL;
     const [book, setBook] = useState({shop_name:'', book_name:'',
             category_name:'',author_name:'',price:'',discount_price:'',ibsn_number:'', additional_year:''})
       

@@ -2,17 +2,19 @@
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { apiBaseUrl } from '../components/Configs.js';
+//import { apiBaseUrl } from '../components/Configs.js';
 import { Fragment } from 'react';
 import { Link} from "react-router-dom";
-import Swal from 'sweetalert2';
+//import Swal from 'sweetalert2';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 function Student() {
 
    const  [studentList, setStudentList] = useState([])
-  
+   //const apiBaseUrl = process.env.REACT_PUBLIC_REST_API;
+    const apiBaseUrl = process.env.REACT_APP_BASE_URL;
+ 
     useEffect(() => {
         fetchStudentList()
     }, [])
@@ -27,38 +29,38 @@ function Student() {
         })
     }
   
-    const handleDelete = (id) => {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-          }).then((result) => {
-            if (result.isConfirmed) {
-                axios.delete(apiBaseUrl + 'students/${id}')
-                .then(function (response) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Student deleted successfully!',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    fetchStudentList()
-                })
-                .catch(function (error) {
-                    Swal.fire({
-                         icon: 'error',
-                        title: 'An Error Occured!',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                });
-            }
-          })
-    } 
+    // const handleDelete = (id) => {
+    //     Swal.fire({
+    //         title: 'Are you sure?',
+    //         text: "You won't be able to revert this!",
+    //         icon: 'warning',
+    //         showCancelButton: true,
+    //         confirmButtonColor: '#3085d6',
+    //         cancelButtonColor: '#d33',
+    //         confirmButtonText: 'Yes, delete it!'
+    //       }).then((result) => {
+    //         if (result.isConfirmed) {
+    //             axios.delete(apiBaseUrl + 'students/${id}')
+    //             .then(function (response) {
+    //                 Swal.fire({
+    //                     icon: 'success',
+    //                     title: 'Student deleted successfully!',
+    //                     showConfirmButton: false,
+    //                     timer: 1500
+    //                 })
+    //                 fetchStudentList()
+    //             })
+    //             .catch(function (error) {
+    //                 Swal.fire({
+    //                      icon: 'error',
+    //                     title: 'An Error Occured!',
+    //                     showConfirmButton: false,
+    //                     timer: 1500
+    //                 })
+    //             });
+    //         }
+    //       })
+    // } 
     //studentList
     
     return (
@@ -82,7 +84,7 @@ function Student() {
                 </div>
 
                 <div className="button-table text-end ms-auto">
-                <Link to={`/author`} className="btn btn-dash--1">
+                <Link to={`/student`} className="btn btn-dash--1">
                             <i className="fa fa-download me-2"></i>Export</Link> &nbsp;
                     <a href="./addstudent" className="btn btn-dash--1"><i className="fa fa-plus me-2"></i>Add
                         Student </a>
@@ -120,12 +122,7 @@ function Student() {
                   to={`/editstudent/${student._id}`}
                    className="me-3">  <i className="fa fa-pencil-square-o"></i>
                   </Link>
-                <button 
-                     onClick={()=>handleDelete(student.id)}
-                      className="btn-outline-danger mx-1">
-                  <i className="fa fa-trash"></i>
-                 </button>
-                   
+               
                 
                 </td>
             </tr>

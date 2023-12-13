@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Fragment } from 'react';
 import { Link} from "react-router-dom";
-import { apiBaseUrl } from '../components/Configs.js';
+//import { apiBaseUrl } from '../components/Configs.js';
 
 function Dashboard() {
     return (

@@ -1,7 +1,7 @@
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { apiBaseUrl } from '../components/Configs.js';
+//import { apiBaseUrl } from '../components/Configs.js';
 import { Fragment } from 'react';
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -10,7 +10,8 @@ import axios from 'axios';
 
 function Category() {
     const [category_name, setCategory_name] = useState('');
-    const [isSaving, setIsSaving] = useState(false)
+    const [isSaving, setIsSaving] = useState(false);
+    const apiBaseUrl = process.env.REACT_APP_BASE_URL;
   
     const handleSave = () => {
         setIsSaving(true);

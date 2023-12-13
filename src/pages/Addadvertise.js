@@ -1,19 +1,20 @@
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { apiBaseUrl } from '../components/Configs.js'
+//import { apiBaseUrl } from '../components/Configs.js'
 import { Fragment } from 'react';
 import React, {useState} from 'react';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 
 function Addadvertise() {
+    const apiBaseUrl = process.env.REACT_APP_BASE_URL;
     const [title, setTitle] = useState('');
     const [scriptcode, setScriptcode] = useState('');
     const [startdate, setStartdate] = useState('');
     const [enddate, setEnddate] = useState('');
     const [images, setImages] = useState('');
-    const [isSaving, setIsSaving] = useState(false)
+    const [isSaving, setIsSaving] = useState(false);
   
     const handleSave = () => {
         setIsSaving(true);

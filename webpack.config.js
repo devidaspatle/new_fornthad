@@ -1,3 +1,4 @@
+const Dotenv = require('dotenv-webpack');
 module.exports = {
     entry: 'src/client.js',
     output: {
@@ -6,6 +7,8 @@ module.exports = {
         path:__dirname + 'dist',
         publicPath: "./public" 
     },
+
+
     module: {
         loaders: [
             {
@@ -18,6 +21,9 @@ module.exports = {
                 presets: ['react', 'es2015']
               }              
             }
+          ]
+        plugins: [
+            new Dotenv()
           ]
     },
     //devtool: 'source-map',

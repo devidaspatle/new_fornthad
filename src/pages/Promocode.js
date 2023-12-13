@@ -1,7 +1,7 @@
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { apiBaseUrl } from '../components/Configs.js';
+//import { apiBaseUrl } from '../components/Configs.js';
 import { Fragment } from 'react';
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from 'react'
@@ -12,6 +12,7 @@ function Promocode() {
     const [promocode, setPromocode] = useState('');
     const [price, setPrice] = useState('');
     const [isSaving, setIsSaving] = useState(false)
+    const apiBaseUrl = process.env.REACT_APP_BASE_URL;
   
     const handleSave = () => {
         setIsSaving(true);

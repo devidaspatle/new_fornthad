@@ -5,12 +5,13 @@ import { Fragment } from 'react';
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 
-import Swal from 'sweetalert2';
-import { apiBaseUrl } from '../components/Configs.js';
+//import Swal from 'sweetalert2';
+//import { apiBaseUrl } from '../components/Configs.js';
 import axios from 'axios';
 
 function Showproduct() {
-    const [id, setId] = useState(useParams().id)
+    const [id] = useState(useParams().id);
+    const apiBaseUrl = process.env.REACT_APP_BASE_URL;
     const [product, setProduct] = useState({shop_name:'', product_name:'',
             category_name:'',author_name:'',price:'',discount_price:'',ibsn_number:'', additional_year:''})
     

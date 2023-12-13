@@ -1,13 +1,14 @@
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { apiBaseUrl } from '../components/Configs.js'
+//import { apiBaseUrl } from '../components/Configs.js'
 import { Fragment } from 'react';
 import React, {useState} from 'react';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 
 function Addmembershipplan() {
+    const apiBaseUrl = process.env.REACT_APP_BASE_URL;
     const [plan_type, setPlan_type] = useState('');
     const [description, setDescription] = useState('');  
     const [price, setPrice] = useState('')

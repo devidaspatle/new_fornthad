@@ -1,7 +1,7 @@
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { apiBaseUrl } from '../components/Configs.js';
+//import { apiBaseUrl } from '../components/Configs.js';
 import { Fragment } from 'react';
 import { Link  } from "react-router-dom";
 import Swal from 'sweetalert2';
@@ -9,7 +9,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 function Product() {
-      const  [productList, setProductList] = useState([])
+      const  [productList, setProductList] = useState([]);
+      const apiBaseUrl = process.env.REACT_APP_BASE_URL;
   
     useEffect(() => {
         fetchProductList()
