@@ -68,7 +68,7 @@ function Addbook() {
     }, [])
   
     const fetchAuthorList = () => {
-     axios.get('http://localhost:4000/api/authors')
+     axios.get(apiBaseUrl + 'authors')
      .then(function (response) {
       setAuthorList(response.data);
      })
@@ -78,7 +78,7 @@ function Addbook() {
  }
  
  const fetchShopList = () => {
-     axios.get('http://localhost:4000/api/shops')
+     axios.get(apiBaseUrl + 'shops')
      .then(function (response) {
       setShopList(response.data);
      })
@@ -87,7 +87,7 @@ function Addbook() {
      })
  }
  const fetchCategoryList = () => {
-     axios.get('http://localhost:4000/api/categorys')
+     axios.get(apiBaseUrl + 'categorys')
      .then(function (response) {
       setCategoryList(response.data);
      })

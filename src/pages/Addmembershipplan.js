@@ -32,6 +32,7 @@ function Addmembershipplan() {
             setPlan_type('')
             setDescription('')
             setPrice('')
+            window.location = "student";
           })
           .catch(function (error) {
             Swal.fire({

@@ -44,6 +44,7 @@ function Addstudent() {
             setCity('')
             setAddress('')
             setLocation_map('')
+            window.location = "student";
           })
           .catch(function (error) {
             Swal.fire({

@@ -38,6 +38,7 @@ function Adduser() {
             setMobile('')
             setEmailid('')
             setPassword('')
+            window.location = "student";
           })
           .catch(function (error) {
             Swal.fire({

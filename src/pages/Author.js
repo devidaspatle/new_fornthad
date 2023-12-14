@@ -24,6 +24,7 @@ function Author() {
                 title: 'Author saved successfully!',
                 showConfirmButton: false,
                 timer: 1500
+                window.location = "student";
             })
             setIsSaving(false);
             setAuthor_name('')

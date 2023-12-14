@@ -37,6 +37,7 @@ function Addadvertise() {
             setScriptcode('')
             setStartdate('')
             setEnddate('')
+            window.location = "dashboard";
           })
           .catch(function (error) {
             Swal.fire({
